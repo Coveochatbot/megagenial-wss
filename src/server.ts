@@ -47,6 +47,16 @@ export class SocketServer {
                 this.io.emit('message', m);
             });
 
+            socket.on('new', () => {
+                console.log('Start a new game');
+                this.io.emit('new');
+            });
+
+            socket.on('update', () => {
+                console.log('Start a new game');
+                this.io.emit('update');
+            });
+
             socket.on('disconnect', () => {
                 console.log('Client disconnected');
             });
