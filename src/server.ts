@@ -47,6 +47,11 @@ export class SocketServer {
                 this.io.emit('message', m);
             });
 
+            socket.on('start', (time: string) => {
+                console.log('Begin the game');
+                this.io.emit('start', time);
+            });
+
             socket.on('new', () => {
                 console.log('Start a new game');
                 this.io.emit('new');
